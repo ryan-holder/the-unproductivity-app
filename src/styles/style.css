@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+/* navigation bar */
+
+.nav {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4em;
+	border-bottom: 0.5px solid lightgrey;
+	background: white;
+}
+
+.nav ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	width: 100%;
+}
+
+.nav li {
+	list-style: none;
+	padding: 0 3em 0 3em;
+	font-weight: 500;
+	font-size: 1.3em;
+}
+
+.nav a {
+	text-decoration: none;
+	color: black; 
+}
+
+.nav img {
+	position: fixed;
+	top: -6px;
+	left: -7px;
+	height: 70px;
+}
+
+
+/* landing page */
+
+.landing {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: white;
+}
+
+/* todos page */
+
+.todos-landing {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 120vh;
+	width: 100%;
+	background: white;
+}
+
+.todos {
+	background: white;
+  max-width: 100em;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  border: 1px solid lightgrey;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked + p {
+  background: #F9F9F9;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+p {
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  flex: 1;
+  font-family:'helvetica neue';
+  font-size: 15px;
+  font-weight: 200;
+  border-left: 1px solid #D1E2FF;
+}
+
+/* canvas page */
+
+.canvas {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: white;
+}
+
+/* memos page */
+
+.memos {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: white;
+}
+
+/* footer */
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 4em;
+	border-top: 0.5px solid lightgrey;
+}
