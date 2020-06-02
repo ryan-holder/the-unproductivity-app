@@ -1,13 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
-html, body {
+html,
+body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Alegreya Sans SC', sans-serif;
+	font-family: "Alegreya Sans SC", sans-serif;
+	box-sizing: border-box;
 }
 
-/* navigation bar */
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+button,
+audio {
+	background: white;
+	padding: 0.5em;
+	font-family: "Alegreya Sans SC", sans-serif;
+}
+
+button {
+	border: 1px solid lightgrey;
+}
+
+button:active {
+	box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+audio {
+	border-top: 1px solid lightgrey;
+	border-left: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+}
+
+audio,
+button:focus {
+	outline: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+/* NAVIGATION BAR */
 
 .nav {
 	display: flex;
@@ -39,9 +77,14 @@ html, body {
 	font-size: 1.3em;
 }
 
+.nav li:hover a {
+	border-bottom: 1px solid lightgrey;
+}
+
 .nav a {
 	text-decoration: none;
-	color: black; 
+	color: black;
+	padding-bottom: 0.1em;
 }
 
 .nav img {
@@ -49,10 +92,10 @@ html, body {
 	top: -6px;
 	left: -7px;
 	height: 70px;
+	z-index: 2;
 }
 
-
-/* landing page */
+/* LANDING PAGE */
 
 .landing {
 	display: flex;
@@ -63,81 +106,171 @@ html, body {
 	background: white;
 }
 
-/* todos page */
+/* TODOS PAGE */
 
 .todos-landing {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 120vh;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
+	margin-top: 3em;
 	background: white;
+}
+
+input[type="text"] {
+	background: lightgrey;
+	border: none;
+	width: 50em;
+	height: 3em;
+	border-radius: 6px;
+	padding: 1em;
+}
+
+input[type="text"]:focus {
+	outline: none;
+}
+
+input[type="submit"] {
+	display: none;
 }
 
 .todos {
 	background: white;
-  max-width: 100em;
-  margin: 50px auto;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-  border: 1px solid lightgrey;
+	max-width: 100em;
+	margin: 50px auto;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 0em 0.5em 0.2em rgba(0, 0, 0, 0.1);
+	border: 1px solid lightgrey;
 }
 
 .item {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #F1F1F1;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #f1f1f1;
 }
 
 .item:last-child {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 input:checked + p {
-  background: #F9F9F9;
-  text-decoration: line-through;
+	background: #f9f9f9;
+	text-decoration: line-through;
 }
 
 input[type="checkbox"] {
-  margin: 20px;
+	margin: 20px;
 }
 
 p {
-  margin: 0;
-  padding: 20px;
-  transition: background 0.2s;
-  flex: 1;
-  font-family:'helvetica neue';
-  font-size: 15px;
-  font-weight: 200;
-  border-left: 1px solid #D1E2FF;
+	margin: 0;
+	padding: 20px;
+	transition: background 0.2s;
+	flex: 1;
+	font-family: "Lora", serif;
+	font-size: 15px;
+	font-weight: 400;
+	border-left: 1px solid lightgrey;
 }
 
-/* canvas page */
+/* CANVAS PAGE */
 
-.canvas {
+.canvas-landing {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	margin-top: 3em;
 	background: white;
 }
 
-/* memos page */
+.canvas {
+	height: 35em;
+	width: 60em;
+	margin-top: 2em;
+	border: 1px solid lightgrey;
+}
+
+.canvas-inputs {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	width: 30em;
+}
+
+.canvas-inputs form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.canvas-inputs input {
+	margin: 1em;
+}
+
+/* MEMOS PAGE */
 
 .memos {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	height: 100vh;
+	margin-top: 8.5em;
 	background: white;
 }
 
-/* footer */
+.button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 9em;
+}
+
+.recordings {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2em;
+}
+
+.recording {
+	display: flex;
+	flex-direction: row;
+}
+
+/* BUTTONS */
+
+.todos button {
+	background: white;
+	border: none;
+	margin: 1.5em;
+	color: white;
+}
+
+.todos div:hover button {
+	color: black;
+}
+
+.todos button:hover {
+	background: lightgrey;
+}
+
+.memos button {
+	width: 4.5em;
+}
+
+.stop-active {
+	background: rgb(255, 0, 0);
+}
+
+/* FOOTER */
 
 .footer {
 	display: flex;
