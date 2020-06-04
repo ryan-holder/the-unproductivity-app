@@ -10,6 +10,7 @@ import * as actionCreators from "../actions/actionCreators";
 function mapStateToProps(state) {
 	return {
 		todos: state.todos,
+		canvas: state.canvas,
 		memos: state.memos,
 	};
 }
@@ -36,8 +37,9 @@ class Memos extends React.Component {
 	}
 
 	startRecording = () => {
-		// could use permissions.query instead, but limited support on IE...
-		if (this.props.memos.isBlocked) {
+		if (this.props.memos.recording) return; // stops recording bug when spamming play
+		if (this.props.memos.blocked) {
+			// could use permissions.query instead, but limited support on IE...
 			alert(
 				"You need to give permission for us to use the microphone and then reload the page"
 			);
@@ -51,7 +53,7 @@ class Memos extends React.Component {
 
 	stopRecording = () => {
 		//this prevents empty audio files from loading when stopRecording is clicked
-		if (!this.props.memos.isRecording) return;
+		if (!this.props.memos.recording) return;
 		mp3Recorder
 			.stop()
 			.getMp3()
@@ -68,16 +70,16 @@ class Memos extends React.Component {
 
 	render() {
 		return (
-			<div className="memos">
+			<div className="memos-landing">
 				<div className="button-container">
 					<button
-						className={this.props.memos.isRecording ? "play-active" : ""}
+						className={this.props.memos.recording ? "play-active" : ""}
 						onClick={this.startRecording}
 					>
 						&#x25b6;
 					</button>
 					<button
-						className={this.props.memos.isRecording ? "stop-active" : ""}
+						className={this.props.memos.recording ? "stop-active" : ""}
 						onClick={this.stopRecording}
 					>
 						&#9632;

@@ -1,9 +1,9 @@
 function memos(state = [], action) {
 	switch (action.type) {
 		case "IS_BLOCKED":
-			return Object.assign({}, state, { isBlocked: action.status });
+			return Object.assign({}, state, { blocked: action.status });
 		case "IS_RECORDING":
-			return Object.assign({}, state, { isRecording: action.status });
+			return Object.assign({}, state, { recording: action.status });
 		case "SAVE_MEMO":
 			return {
 				...state,

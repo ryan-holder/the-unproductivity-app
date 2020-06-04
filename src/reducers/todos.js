@@ -12,9 +12,7 @@ function todos(state = [], action) {
 			];
 		case "TOGGLE_TODO":
 			return state.map((todo) =>
-				todo.index === action.index + 1
-					? { ...todo, checked: !todo.checked }
-					: todo
+				todo.index === action.index ? { ...todo, checked: !todo.checked } : todo
 			);
 		default:
 			return state;

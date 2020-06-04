@@ -3,9 +3,14 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../actions/actionCreators";
 
+// size and colour inputs rendering way too many times on input change
+// set a flag to only fire rendering when mouse is up?
+
 function mapStateToProps(state) {
 	return {
+		todos: state.todos,
 		canvas: state.canvas,
+		memos: state.memos,
 	};
 }
 
@@ -32,7 +37,8 @@ class Canvas extends React.Component {
 		this.ctx = this.canvas.getContext("2d");
 		this.canvas.width = this.ctx.canvas.clientWidth;
 		this.canvas.height = this.ctx.canvas.clientHeight;
-		/*this.ctx.strokeStyle = this.props.canvas.hex;*/
+		this.ctx.lineJoin = "round";
+		this.ctx.lineCap = "round";
 	}
 
 	componentDidUpdate() {
@@ -44,8 +50,6 @@ class Canvas extends React.Component {
 		e.persist();
 		if (!this.isDrawing) return; // cancels if mouse is not down
 		this.ctx.lineWidth = this.props.canvas.size;
-		this.ctx.lineJoin = "round";
-		this.ctx.lineCap = "round";
 		this.ctx.strokeStyle = this.props.canvas.hue
 			? `hsl(${this.hue}, 100%, 50%)`
 			: this.colourRef.current.value;
@@ -58,39 +62,32 @@ class Canvas extends React.Component {
 	}
 
 	render() {
-		console.log("rendering");
+		console.log("rendering"); // remove this before build
 		return (
 			<div className="canvas-landing">
 				<div className="canvas-inputs">
-					<form action="">
-						<label htmlFor="size">Size</label>
-						<input
-							ref={this.sizeRef}
-							type="range"
-							name="size"
-							min="1"
-							max="200"
-							// onInput triggers too many renders
-							onInput={() => {
-								this.props.changeSize(this.sizeRef.current.value);
-							}}
-						/>
-					</form>
-					<form action="">
-						<label htmlFor="colour">Colour</label>
-						<input
-							ref={this.colourRef}
-							type="color"
-							name="colour"
-							value={this.props.canvas.hex}
-							onChange={() => {
-								this.props.changeHue(false);
-								this.props.changeColour(this.colourRef.current.value);
-							}}
-						/>
-					</form>
+					<input
+						ref={this.sizeRef}
+						type="range"
+						name="size"
+						min="1"
+						max="200"
+						onInput={() => {
+							this.props.changeSize(this.sizeRef.current.value);
+						}}
+					/>
+					<input
+						ref={this.colourRef}
+						type="color"
+						name="colour"
+						value={this.props.canvas.hex}
+						onChange={() => {
+							this.props.changeHue(false);
+							this.props.changeColour(this.colourRef.current.value);
+						}}
+					/>
 					<button onClick={() => this.props.changeHue(!this.props.canvas.hue)}>
-						Go wild
+						🎉🎉🎉
 					</button>
 				</div>
 				<canvas
