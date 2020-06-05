@@ -2,6 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 html,
 body {
@@ -24,18 +25,8 @@ audio {
 	font-family: "Alegreya Sans SC", sans-serif;
 }
 
-button {
-	border: 1px solid lightgrey;
-}
-
 button:active {
 	box-shadow: inset 0px 0px 5px #c1c1c1;
-}
-
-audio {
-	border-top: 1px solid lightgrey;
-	border-left: 1px solid lightgrey;
-	border-bottom: 1px solid lightgrey;
 }
 
 audio,
@@ -112,6 +103,8 @@ button:hover {
 	align-items: center;
 	height: 100vh;
 	background: white;
+	font-family: "Pacifico", cursive;
+	font-size: 5em;
 }
 
 /* TODOS PAGE */
@@ -132,7 +125,9 @@ input[type="text"] {
 	width: 50em;
 	height: 3em;
 	border-radius: 6px;
-	padding: 1em;
+	padding-left: 1em;
+	font-family: "Lora", serif;
+	font-weight: 400;
 }
 
 input[type="text"]:focus {
@@ -146,7 +141,7 @@ input[type="submit"] {
 .todos {
 	background: white;
 	min-width: 25em;
-	max-width: 100em;
+	max-width: 80em;
 	margin: 3.5em auto;
 	background: white;
 	border-radius: 5px;
@@ -162,6 +157,7 @@ input[type="submit"] {
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid #f1f1f1;
+	text-overflow: wrap;
 }
 
 .item:last-child {
@@ -251,12 +247,27 @@ input[type="checkbox"] {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 2em;
+	margin-top: 4em;
+	background: white;
+	min-width: 25em;
+	max-width: 100em;
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 0em 0.5em 0.2em rgba(0, 0, 0, 0.1);
+	border: 1px solid lightgrey;
 }
 
 .recording {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-bottom: 1px solid lightgrey;
+}
+
+.recording:last-child {
+	border-bottom: none;
 }
 
 /* BUTTONS */
@@ -276,22 +287,26 @@ input[type="checkbox"] {
 	background: lightgrey;
 }
 
-.memos-landing button {
+.button-container button {
 	width: 4.5em;
+	border: 1px solid lightgrey;
+}
+
+.recordings-remove {
+	padding: 0.5em;
+	margin: 1.5em;
+	border: none;
+	color: white;
+}
+
+.recording:hover .recordings-remove {
+	color: black;
+}
+
+.recordings-remove:hover {
+	background: lightgrey;
 }
 
 .stop-active {
 	background: rgb(255, 0, 0);
-}
-
-/* FOOTER */
-
-.footer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 4em;
-	border-top: 0.5px solid lightgrey;
 }

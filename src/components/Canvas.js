@@ -87,7 +87,9 @@ class Canvas extends React.Component {
 						}}
 					/>
 					<button onClick={() => this.props.changeHue(!this.props.canvas.hue)}>
-						🎉🎉🎉
+						<span role="img" aria-label="party-emoji">
+							🎉🎉🎉
+						</span>
 					</button>
 				</div>
 				<canvas

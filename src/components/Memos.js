@@ -85,12 +85,11 @@ class Memos extends React.Component {
 						&#9632;
 					</button>
 				</div>
-				<div className="recordings">
-					<figcaption>
-						{this.props.memos.recordings.length > 0
-							? "Listen:"
-							: "Click record to get memo-ing"}
-					</figcaption>
+				<div
+					className={
+						this.props.memos.recordings.length === 0 ? "" : "recordings"
+					}
+				>
 					{this.props.memos.recordings.map((recording, i) => (
 						<div className="recording" key={i}>
 							<audio controls index={i} src={recording.audio.src}>
