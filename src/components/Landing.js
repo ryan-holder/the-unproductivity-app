@@ -20,12 +20,12 @@ class Landing extends React.Component {
 		} = this.landingRef.current;
 		const { clientX: x, clientY: y } = e;
 
-		const walk = 80;
+		const walk = 120;
 		const xWalk = Math.round((x / width) * walk - walk / 2);
 		const yWalk = Math.round((y / height) * walk - walk / 2);
 
 		this.setState({
-			shadow: `${xWalk * 2}px ${yWalk * 2}px 0 rgba(255,0,0,0.3)`,
+			shadow: `${-xWalk}px ${-yWalk}px 0 rgba(211, 211, 211, 0.7)`,
 		});
 	};
 

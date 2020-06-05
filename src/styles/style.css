@@ -67,6 +67,7 @@ button:hover {
 	justify-content: center;
 	padding: 0;
 	width: 100%;
+	margin-right: 2%;
 }
 
 .nav li {
@@ -105,6 +106,7 @@ button:hover {
 	background: white;
 	font-family: "Pacifico", cursive;
 	font-size: 5em;
+	padding-bottom: 0.5em;
 }
 
 /* TODOS PAGE */
@@ -221,6 +223,7 @@ input[type="checkbox"] {
 .canvas-inputs button {
 	width: 7em;
 	height: 2.5em;
+	border: 1px solid lightgrey;
 }
 
 /* MEMOS PAGE */
@@ -249,7 +252,7 @@ input[type="checkbox"] {
 	justify-content: center;
 	margin-top: 4em;
 	background: white;
-	min-width: 25em;
+	min-width: 24em;
 	max-width: 100em;
 	background: white;
 	border-radius: 5px;
