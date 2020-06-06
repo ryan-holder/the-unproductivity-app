@@ -1,18 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
 	return (
 		<nav className="nav">
 			<ul>
 				<li>
-					<Link to="/todos">to-do list</Link>
+					<NavLink to="/todos">to-do list</NavLink>
 				</li>
 				<li>
-					<Link to="/canvas">canvas</Link>
+					<NavLink to="/canvas">canvas</NavLink>
 				</li>
 				<li>
-					<Link to="/memos">memos</Link>
+					<NavLink to="/memos">memos</NavLink>
 				</li>
 			</ul>
 		</nav>

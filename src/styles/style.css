@@ -1,4 +1,4 @@
-/* IMPORTS, RESETS AND DEFAULTS */
+/********** IMPORTS, RESETS AND DEFAULTS **********/
 
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
@@ -25,10 +25,6 @@ audio {
 	font-family: "Alegreya Sans SC", sans-serif;
 }
 
-button:active {
-	box-shadow: inset 0px 0px 5px #c1c1c1;
-}
-
 audio,
 button:focus {
 	outline: none;
@@ -44,7 +40,7 @@ button:hover {
 	cursor: pointer;
 }
 
-/* NAVIGATION BAR */
+/********** NAVIGATION BAR **********/
 
 .nav {
 	display: flex;
@@ -56,8 +52,12 @@ button:hover {
 	left: 0;
 	width: 100%;
 	height: 4em;
-	border-bottom: 0.5px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
 	background: white;
+}
+
+.nav .active {
+	/* add style here for active nav link 	*/
 }
 
 .nav ul {
@@ -95,7 +95,7 @@ button:hover {
 	z-index: 2;
 }
 
-/* LANDING PAGE */
+/********** LANDING PAGE **********/
 
 .landing {
 	display: flex;
@@ -109,7 +109,7 @@ button:hover {
 	padding-bottom: 0.5em;
 }
 
-/* TODOS PAGE */
+/********** TODOS PAGE **********/
 
 .todos-landing {
 	display: flex;
@@ -187,7 +187,22 @@ input[type="checkbox"] {
 	margin-top: 3.5em;
 }
 
-/* CANVAS PAGE */
+.todos button {
+	background: white;
+	border: none;
+	margin: 1.5em;
+	color: white;
+}
+
+.todos div:hover button {
+	color: black;
+}
+
+.todos button:hover {
+	background: lightgrey;
+}
+
+/********** CANVAS PAGE **********/
 
 .canvas-landing {
 	display: flex;
@@ -201,7 +216,7 @@ input[type="checkbox"] {
 .canvas {
 	height: 75%;
 	width: 85%;
-	margin-top: 1em;
+	margin-top: 1.5em;
 	margin-bottom: 1em;
 	border: 1px solid lightgrey;
 }
@@ -211,13 +226,13 @@ input[type="checkbox"] {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 5em;
+	margin-top: 5.5em;
 	width: 60%;
 }
 
 .canvas-inputs input {
 	width: 7em;
-	margin: 1em;
+	margin-bottom: 0;
 }
 
 .canvas-inputs button {
@@ -226,7 +241,11 @@ input[type="checkbox"] {
 	border: 1px solid lightgrey;
 }
 
-/* MEMOS PAGE */
+.hue-active {
+	box-shadow: inset 0px 0px 0.3em #c1c1c1;
+}
+
+/********** MEMOS PAGE **********/
 
 .memos-landing {
 	display: flex;
@@ -243,6 +262,11 @@ input[type="checkbox"] {
 	justify-content: space-around;
 	margin-top: 7em;
 	width: 9em;
+}
+
+.button-container button {
+	width: 4.5em;
+	border: 1px solid lightgrey;
 }
 
 .recordings {
@@ -273,27 +297,7 @@ input[type="checkbox"] {
 	border-bottom: none;
 }
 
-/* BUTTONS */
-
-.todos button {
-	background: white;
-	border: none;
-	margin: 1.5em;
-	color: white;
-}
-
-.todos div:hover button {
-	color: black;
-}
-
-.todos button:hover {
-	background: lightgrey;
-}
-
-.button-container button {
-	width: 4.5em;
-	border: 1px solid lightgrey;
-}
+/********** MEMOS BUTTONS **********/
 
 .recordings-remove {
 	padding: 0.5em;
@@ -311,5 +315,7 @@ input[type="checkbox"] {
 }
 
 .stop-active {
-	background: rgb(255, 0, 0);
+	background: black;
+	color: transparent;
+	text-shadow: 0 0 0 white;
 }

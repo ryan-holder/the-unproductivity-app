@@ -6,6 +6,10 @@ import * as actionCreators from "../actions/actionCreators";
 // size and colour inputs rendering way too many times on input change
 // set a flag to only fire rendering when mouse is up?
 
+// need to save the canvas drawing to state
+
+// optional: add Clear function; add Undo and Redo function, which would require saving all strokes to an array
+
 function mapStateToProps(state) {
 	return {
 		todos: state.todos,
@@ -42,7 +46,7 @@ class Canvas extends React.Component {
 	}
 
 	componentDidUpdate() {
-		this.ctx.strokeStyle = this.props.canvas.hex; // needed to override the default state initialised when component mounts
+		this.ctx.strokeStyle = this.props.canvas.hex; // required to override the default state initialised when component mounts
 		this.ctx.lineWidth = this.props.canvas.size;
 	}
 
@@ -62,7 +66,6 @@ class Canvas extends React.Component {
 	}
 
 	render() {
-		console.log("rendering"); // remove this before build
 		return (
 			<div className="canvas-landing">
 				<div className="canvas-inputs">
@@ -86,7 +89,10 @@ class Canvas extends React.Component {
 							this.props.changeColour(this.colourRef.current.value);
 						}}
 					/>
-					<button onClick={() => this.props.changeHue(!this.props.canvas.hue)}>
+					<button
+						className={this.props.canvas.hue ? "hue-active" : ""}
+						onClick={() => this.props.changeHue(!this.props.canvas.hue)}
+					>
 						<span role="img" aria-label="party-emoji">
 							🎉🎉🎉
 						</span>

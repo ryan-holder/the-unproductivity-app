@@ -4,9 +4,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../actions/actionCreators";
 
-////NEED TO CHANGE NAME OF ISBLOCKED and ISRECORDING FUNCTION AS THEY ARE
-/// THE SAME AS THE BOOLEANS WHICH IS FUCKING CONFUSING
-
 function mapStateToProps(state) {
 	return {
 		todos: state.todos,
