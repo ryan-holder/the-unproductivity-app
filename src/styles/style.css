@@ -190,7 +190,8 @@ input[type="checkbox"] {
 .todos button {
 	background: white;
 	border: none;
-	margin: 1.5em;
+	padding: 0.5em 0.7em;
+	margin: 1.5em 1.3em;
 	color: white;
 }
 
@@ -232,7 +233,7 @@ input[type="checkbox"] {
 
 .canvas-inputs input {
 	width: 7em;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .canvas-inputs button {
@@ -300,8 +301,8 @@ input[type="checkbox"] {
 /********** MEMOS BUTTONS **********/
 
 .recordings-remove {
-	padding: 0.5em;
-	margin: 1.5em;
+	padding: 0.5em 0.7em;
+	margin: 1.5em 1.3em;
 	border: none;
 	color: white;
 }
