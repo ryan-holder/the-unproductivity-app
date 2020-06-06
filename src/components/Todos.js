@@ -3,8 +3,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../actions/actionCreators";
 
-// when deleting checked item, the below item will take on checked style but not status
-
 function mapStateToProps(state) {
 	return {
 		todos: state.todos,
@@ -39,8 +37,7 @@ class Todos extends React.Component {
 				className={
 					this.props.todos[index].checked ? "item item-active" : "item"
 				}
-				key={index}
-				index={index}
+				key={this.props.todos[index].index} // this fixes bug with checkboxes
 				ref={this.todoRef}
 			>
 				<input
