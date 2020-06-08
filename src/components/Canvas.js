@@ -8,7 +8,7 @@ import * as actionCreators from "../actions/actionCreators";
 
 // need to save the canvas drawing to state
 
-// optional: add Clear function; add Undo and Redo function, which would require saving all strokes to an array
+// optional: add Undo and Redo function, which would require saving all strokes to an array
 
 function mapStateToProps(state) {
 	return {
@@ -65,6 +65,10 @@ class Canvas extends React.Component {
 		this.hue = this.hue + 20;
 	}
 
+	clear = () => {
+		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	};
+
 	render() {
 		return (
 			<div className="canvas-landing">
@@ -97,6 +101,7 @@ class Canvas extends React.Component {
 							🎉🎉🎉
 						</span>
 					</button>
+					<button onClick={this.clear}>Clear</button>
 				</div>
 				<canvas
 					className="canvas"

@@ -47,9 +47,7 @@ class Todos extends React.Component {
 					}}
 				/>
 				<p>{todo.content}</p>
-				<button index={index} onClick={() => this.props.removeTodo(index)}>
-					&times;
-				</button>
+				<button onClick={() => this.props.removeTodo(index)}>&times;</button>
 			</div>
 		);
 	};
