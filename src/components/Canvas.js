@@ -62,7 +62,7 @@ class Canvas extends React.Component {
 		this.ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
 		this.ctx.stroke();
 		[this.lastX, this.lastY] = [e.nativeEvent.offsetX, e.nativeEvent.offsetY]; // updates draw location
-		this.hue = this.hue + 20;
+		this.hue = this.hue + 15;
 	}
 
 	clear = () => {
