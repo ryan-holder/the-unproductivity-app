@@ -1,3 +1,6 @@
+// Change body font to sans serif, so that it's smaller and less bold than nav font
+// add better copywriting to todos to make it more fun; possibly integrating animating messages when toggling todos
+
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -24,30 +27,31 @@ class Todos extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const index = this.props.todos.length;
+		const index = this.props.todos[this.props.todos.length - 1].index + 1; // could this be any unique number? i.e. Date.now()
 		const todo = this.inputRef.current.value;
 		const checked = false;
 		this.props.addTodo(index, todo, checked);
 		e.target.reset();
 	};
 
-	renderTodos = (todo, index) => {
+	renderTodos = (todo, listIndex) => {
 		return (
 			<div
-				className={
-					this.props.todos[index].checked ? "item item-active" : "item"
-				}
-				key={this.props.todos[index].index} // this fixes bug with checkboxes
+				className={todo.checked ? "item item-active" : "item"}
+				key={todo.index}
+				index={todo.index}
 				ref={this.todoRef}
 			>
 				<input
 					type="checkbox"
 					onClick={(e) => {
-						this.props.toggleTodo(this.props.todos[index].index); // this makes toggling todos work when items have been deleted
+						this.props.toggleTodo(todo.index);
 					}}
 				/>
 				<p>{todo.content}</p>
-				<button onClick={() => this.props.removeTodo(index)}>&times;</button>
+				<button onClick={() => this.props.removeTodo(listIndex)}>
+					&times;
+				</button>
 			</div>
 		);
 	};
@@ -56,7 +60,11 @@ class Todos extends React.Component {
 		return (
 			<div className="todos-landing">
 				<form className="add-todo" onSubmit={this.handleSubmit}>
-					<input ref={this.inputRef} type="text" />
+					<input
+						ref={this.inputRef}
+						type="text"
+						placeholder="Add your todos here"
+					/>
 					<input type="submit" className="add-todo-button" />
 				</form>
 				{this.props.todos.length === 0 ? (
