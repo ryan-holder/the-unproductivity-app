@@ -3,7 +3,11 @@ function todos(state = [], action) {
 		case "ADD_TODO":
 			return [
 				...state,
-				{ index: action.index, content: action.todo, checked: action.checked },
+				{
+					index: action.index,
+					content: action.todo,
+					checked: action.checked,
+				},
 			];
 		case "REMOVE_TODO":
 			return [
