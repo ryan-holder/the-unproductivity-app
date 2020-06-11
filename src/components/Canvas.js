@@ -26,6 +26,7 @@ class Canvas extends React.Component {
 	constructor() {
 		super();
 		this.draw = this.draw.bind(this);
+		this.handleMouseDown = this.handleMouseDown.bind(this);
 		this.canvasRef = React.createRef();
 		this.sizeRef = React.createRef();
 		this.colourRef = React.createRef();
@@ -48,6 +49,11 @@ class Canvas extends React.Component {
 	componentDidUpdate() {
 		this.ctx.strokeStyle = this.props.canvas.hex; // required to override the default state initialised when component mounts
 		this.ctx.lineWidth = this.props.canvas.size;
+	}
+
+	handleMouseDown(e) {
+		this.isDrawing = true;
+		[this.lastX, this.lastY] = [e.nativeEvent.offsetX, e.nativeEvent.offsetY];
 	}
 
 	draw(e) {
@@ -106,13 +112,7 @@ class Canvas extends React.Component {
 				<canvas
 					className="canvas"
 					ref={this.canvasRef}
-					onMouseDown={(e) => {
-						this.isDrawing = true;
-						[this.lastX, this.lastY] = [
-							e.nativeEvent.offsetX,
-							e.nativeEvent.offsetY,
-						];
-					}}
+					onMouseDown={(e) => this.handleMouseDown(e)}
 					onMouseMove={(e) => this.draw(e)}
 					onMouseUp={() => (this.isDrawing = false)}
 					onMouseLeave={() => (this.isDrawing = false)}
