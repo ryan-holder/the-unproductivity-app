@@ -6,9 +6,9 @@ import * as actionCreators from "../actions/actionCreators";
 // size and colour inputs rendering way too many times on input change
 // set a flag to only fire rendering when mouse is up?
 
-// need to save the canvas drawing to state
+// SHOULD I COMBINE TOUCHDRAW AND DRAW? SET TERNARY FOR X AND Y COORDINATES?
 
-// optional: add Undo and Redo function, which would require saving all strokes to an array
+// need to save the canvas drawing to state
 
 function mapStateToProps(state) {
 	return {
@@ -25,7 +25,10 @@ function mapDispatchToProps(dispatch) {
 class Canvas extends React.Component {
 	constructor() {
 		super();
+		this.handleMouseDown = this.handleMouseDown.bind(this);
+		this.handleTouch = this.handleTouch.bind(this);
 		this.draw = this.draw.bind(this);
+		this.touchDraw = this.touchDraw.bind(this);
 		this.canvasRef = React.createRef();
 		this.sizeRef = React.createRef();
 		this.colourRef = React.createRef();
@@ -48,6 +51,45 @@ class Canvas extends React.Component {
 	componentDidUpdate() {
 		this.ctx.strokeStyle = this.props.canvas.hex; // required to override the default state initialised when component mounts
 		this.ctx.lineWidth = this.props.canvas.size;
+	}
+
+	handleMouseDown(e) {
+		this.isDrawing = true;
+		[this.lastX, this.lastY] = [e.nativeEvent.offsetX, e.nativeEvent.offsetY];
+	}
+
+	handleTouch(e) {
+		e.persist(e);
+		this.isDrawing = true;
+		const rect = e.target.getBoundingClientRect();
+		[this.lastX, this.lastY] = [
+			"X",
+			e.nativeEvent.touches[0].pageX - rect.left,
+			e.nativeEvent.touches[0].pageY - rect.top,
+		];
+	}
+
+	touchDraw(e) {
+		e.persist();
+		const rect = e.target.getBoundingClientRect();
+		if (!this.isDrawing) return; // cancels if mouse is not down
+		this.ctx.lineWidth = this.props.canvas.size;
+		this.ctx.strokeStyle = this.props.canvas.hue
+			? `hsl(${this.hue}, 100%, 50%)`
+			: this.colourRef.current.value;
+		this.ctx.beginPath();
+		this.ctx.moveTo(this.lastX, this.lastY);
+		this.ctx.lineTo(
+			e.nativeEvent.touches[0].pageX - rect.left,
+			e.nativeEvent.touches[0].pageY - rect.top
+		);
+		this.ctx.stroke();
+		[this.lastX, this.lastY] = [
+			"X",
+			e.nativeEvent.touches[0].pageX - rect.left,
+			e.nativeEvent.touches[0].pageY - rect.top,
+		]; // updates draw location
+		this.hue = this.hue + 15;
 	}
 
 	draw(e) {
@@ -106,16 +148,13 @@ class Canvas extends React.Component {
 				<canvas
 					className="canvas"
 					ref={this.canvasRef}
-					onMouseDown={(e) => {
-						this.isDrawing = true;
-						[this.lastX, this.lastY] = [
-							e.nativeEvent.offsetX,
-							e.nativeEvent.offsetY,
-						];
-					}}
+					onMouseDown={(e) => this.handleMouseDown(e)}
 					onMouseMove={(e) => this.draw(e)}
 					onMouseUp={() => (this.isDrawing = false)}
 					onMouseLeave={() => (this.isDrawing = false)}
+					onTouchStart={(e) => this.handleTouch(e)}
+					onTouchMove={(e) => this.touchDraw(e)}
+					onTouchEnd={() => (this.isDrawing = false)}
 				></canvas>
 			</div>
 		);
