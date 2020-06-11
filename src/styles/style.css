@@ -69,9 +69,9 @@ button:hover {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	width: 50%;
+	width: 45%;
 	padding: 0;
-	margin-right: 2%;
+	margin-right: 1.5%;
 }
 
 .nav li {
@@ -117,7 +117,7 @@ button:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	height: 100vh;
 	width: 100%;
 	background: white;
@@ -153,7 +153,7 @@ input[type="submit"] {
 	background: white;
 	min-width: 30%;
 	max-width: 80%;
-	margin: 3.5em auto;
+	margin: 3.5em 0 3em 0;
 	background: white;
 	border-radius: 5px;
 	box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
@@ -329,8 +329,20 @@ input[type="checkbox"] {
 
 /********** MEDIA QUERIES **********/
 
-@media all and (max-width: 40em) {
+@media all and (max-width: 55em) {
+	.nav ul {
+		width: 70%;
+	}
+}
+
+@media all and (max-width: 400px) {
 	.nav ul {
 		width: 100%;
+	}
+	.add-todo {
+		margin-top: 5.5em;
+	}
+	.todos {
+		margin-top: 1.7em;
 	}
 }
