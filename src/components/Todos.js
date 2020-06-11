@@ -27,7 +27,10 @@ class Todos extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const index = this.props.todos[this.props.todos.length - 1].index + 1; // could this be any unique number? i.e. Date.now()
+		const index =
+			this.props.todos.length > 0
+				? this.props.todos[this.props.todos.length - 1].index + 1 // need to explain what this is
+				: 0;
 		const todo = this.inputRef.current.value;
 		const checked = false;
 		this.props.addTodo(index, todo, checked);
