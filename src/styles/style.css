@@ -58,6 +58,7 @@ button:hover {
 	font-family: "Alegreya Sans SC", sans-serif;
 	border-bottom: 1px solid lightgrey;
 	background: white;
+	z-index: 2;
 }
 
 .nav .active {
@@ -87,14 +88,6 @@ button:hover {
 	text-decoration: none;
 	color: black;
 	padding-bottom: 0.1em;
-}
-
-.nav img {
-	position: fixed;
-	top: -6px;
-	left: -7px;
-	height: 70px;
-	z-index: 2;
 }
 
 /********** LANDING PAGE **********/
