@@ -65,6 +65,14 @@ button:hover {
 	/* add style here for active nav link 	*/
 }
 
+.nav img {
+	position: fixed;
+	top: 1em;
+	left: 1.25em;
+	height: 2em;
+	opacity: 0.3;
+}
+
 .nav ul {
 	display: flex;
 	flex-direction: row;
@@ -97,11 +105,17 @@ button:hover {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	height: 100vh;
 	background: white;
 	font-family: "Pacifico", cursive;
 	font-size: 5em;
 	padding-bottom: 0.5em;
+	cursor: grab;
+}
+
+.landing:active {
+	cursor: grabbing;
 }
 
 /********** TODOS PAGE **********/
@@ -323,6 +337,9 @@ input[type="checkbox"] {
 /********** MEDIA QUERIES **********/
 
 @media all and (max-width: 55em) {
+	.landing {
+		font-size: 4em;
+	}
 	.nav ul {
 		width: 70%;
 	}
@@ -340,20 +357,47 @@ input[type="checkbox"] {
 	}
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 721px) {
+	.landing {
+		font-size: 2.5em;
+	}
+}
+
+@media all and (max-width: 415px) {
+	.landing {
+		font-size: 2em;
+	}
+	.nav {
+		height: 6em;
+	}
 	.nav ul {
 		width: 100%;
+		margin-right: 4%;
+		margin-bottom: 0.6em;
+	}
+	.nav img {
+		height: 2.1em;
+		width: 100%;
+		left: 0.25em;
+		top: 0.9em;
 	}
 	.add-todo {
-		margin-top: 5.5em;
+		margin-top: 7.4em;
 	}
 	.todos {
 		margin-top: 1.7em;
 	}
 	.canvas-inputs {
+		margin-top: 7em;
 		width: 100%;
 	}
 	.canvas-inputs > * {
 		transform: scale(0.8);
+	}
+	.canvas {
+		margin-top: 1em;
+	}
+	.button-container {
+		margin-top: 7.4em;
 	}
 }

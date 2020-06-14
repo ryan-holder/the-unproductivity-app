@@ -3,13 +3,6 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as actionCreators from "../actions/actionCreators";
 
-// size and colour inputs rendering way too many times on input change
-// set a flag to only fire rendering when mouse is up?
-
-// SHOULD I COMBINE TOUCHDRAW AND DRAW? SET TERNARY FOR X AND Y COORDINATES?
-
-// need to save the canvas drawing to state
-
 function mapStateToProps(state) {
 	return {
 		todos: state.todos,

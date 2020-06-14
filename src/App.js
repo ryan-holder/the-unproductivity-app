@@ -1,3 +1,7 @@
+// Known bugs: no 4k resolution media queries, landing and canvas rendering to many times on input change
+
+// Improvements: adding canvas to state; undo and redo functionality; make touchdraw and draw one function; add filters to memos
+
 import React from "react";
 import Nav from "./components/Nav";
 import Landing from "./components/Landing";

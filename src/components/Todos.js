@@ -1,4 +1,3 @@
-// Change body font to sans serif, so that it's smaller and less bold than nav font
 // add better copywriting to todos to make it more fun; possibly integrating animating messages when toggling todos
 
 import React from "react";
