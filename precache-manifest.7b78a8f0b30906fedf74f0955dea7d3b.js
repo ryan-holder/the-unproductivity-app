@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a15bf83bef3d32e60914ac444c5ff0c8",
+    "revision": "6e2ba40bdc7338064ce057b45a1e40ba",
     "url": "/the-unproductivity-app/index.html"
   },
   {
