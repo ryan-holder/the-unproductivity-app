@@ -12,8 +12,8 @@ class Landing extends React.Component {
 
 	changeShadow = (e) => {
 		if (!this.state.mouseDown) return;
-		e.persist();
 		e.preventDefault();
+		e.persist();
 		const {
 			offsetHeight: height,
 			offsetWidth: width,

@@ -26,6 +26,7 @@ class Todos extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		if (this.inputRef.current.value === "") return;
 		const index =
 			this.props.todos.length > 0
 				? this.props.todos[this.props.todos.length - 1].index + 1 // need to explain what this is

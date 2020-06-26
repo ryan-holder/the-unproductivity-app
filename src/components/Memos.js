@@ -22,7 +22,7 @@ const mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 class Memos extends React.Component {
 	componentDidMount() {
-		navigator.getUserMedia(
+		navigator.mediaDevices.getUserMedia(
 			{ audio: true },
 			() => {
 				console.log("Permission granted");

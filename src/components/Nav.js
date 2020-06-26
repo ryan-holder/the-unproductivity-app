@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 const Nav = () => {
 	return (
 		<nav className="nav">
-			<Link to="/">
+			<Link to="/the-unproductivity-app">
 				<img
 					src="https://image.flaticon.com/icons/svg/319/319147.svg"
 					alt="black square"
@@ -12,13 +12,13 @@ const Nav = () => {
 			</Link>
 			<ul>
 				<li>
-					<NavLink to="/todos">to-do list</NavLink>
+					<NavLink to="/the-unproductivity-app/todos">to-do list</NavLink>
 				</li>
 				<li>
-					<NavLink to="/canvas">canvas</NavLink>
+					<NavLink to="/the-unproductivity-app/canvas">canvas</NavLink>
 				</li>
 				<li>
-					<NavLink to="/memos">memos</NavLink>
+					<NavLink to="/the-unproductivity-app/memos">memos</NavLink>
 				</li>
 			</ul>
 		</nav>

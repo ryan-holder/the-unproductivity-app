@@ -16,10 +16,10 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/todos" component={Todos} />
-        <Route path="/canvas" component={Canvas} />
-        <Route path="/memos" component={Memos} />
+        <Route exact path="/the-unproductivity-app" component={Landing} />
+        <Route path="/the-unproductivity-app/todos" component={Todos} />
+        <Route path="/the-unproductivity-app/canvas" component={Canvas} />
+        <Route path="/the-unproductivity-app/memos" component={Memos} />
       </Switch>
     </BrowserRouter>
   );

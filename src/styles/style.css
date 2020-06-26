@@ -112,6 +112,7 @@ button:hover {
 	font-size: 5em;
 	padding-bottom: 0.5em;
 	cursor: grab;
+	-moz-user-select: none;
 }
 
 .landing:active {
