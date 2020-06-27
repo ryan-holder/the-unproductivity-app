@@ -228,7 +228,6 @@ input[type="checkbox"] {
 }
 
 .canvas {
-	cursor: pointer;
 	height: 75%;
 	width: 85%;
 	margin-top: 1.5em;
