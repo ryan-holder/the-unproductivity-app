@@ -65,6 +65,7 @@ class Canvas extends React.Component {
 
 	touchDraw(e) {
 		e.persist();
+		e.preventDefault();
 		const rect = e.target.getBoundingClientRect();
 		if (!this.isDrawing) return; // cancels if mouse is not down
 		this.ctx.lineWidth = this.props.canvas.size;
