@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/the-unproductivity-app/precache-manifest.7852a222d7c49d6f496652c04b680ce3.js"
+  "/the-unproductivity-app/precache-manifest.3b72c254c9d6c8ddb16af2866c45d361.js"
 );
 
 self.addEventListener('message', (event) => {
