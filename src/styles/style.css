@@ -234,7 +234,6 @@ input[type="checkbox"] {
 	margin-bottom: 1em;
 	border-radius: 5px;
 	border: 1px solid lightgrey;
-	touch-action: none;
 }
 
 .canvas-inputs {

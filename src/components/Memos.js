@@ -22,18 +22,21 @@ const mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 class Memos extends React.Component {
 	componentDidMount() {
-		navigator.mediaDevices.getUserMedia(
-			{ audio: true },
-			() => {
+		this.getMicPermission();
+	}
+
+	getMicPermission = () => {
+		navigator.mediaDevices
+			.getUserMedia({ audio: true })
+			.then(() => {
 				console.log("Permission granted");
 				this.props.isBlocked(false);
-			},
-			() => {
+			})
+			.catch((err) => {
 				console.log("Permission denied");
 				this.props.isBlocked(true);
-			}
-		);
-	}
+			});
+	};
 
 	startRecording = () => {
 		if (this.props.memos.recording) return; // stops recording bug when spamming play

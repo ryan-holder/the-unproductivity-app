@@ -30,7 +30,6 @@ class Landing extends React.Component {
 	};
 
 	render() {
-		console.log("rendering");
 		return (
 			<Fragment>
 				<div
