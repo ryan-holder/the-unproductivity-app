@@ -71,8 +71,7 @@ class Memos extends React.Component {
 				const recording = new Audio(URL.createObjectURL(file));
 				this.props.isRecording(false);
 				this.props.saveMemo(recording, Date.now());
-			})
-			.catch((err) => alert(err));
+			});
 	};
 
 	render() {
