@@ -51,7 +51,9 @@ class Memos extends React.Component {
 			);
 		} else {
 			this.props.isRecording(true);
-			mp3Recorder.start().catch((err) => alert("Something went wrong", err));
+			mp3Recorder
+				.start()
+				.catch((err) => console.error("Something went wrong", err));
 		}
 	};
 
@@ -69,7 +71,8 @@ class Memos extends React.Component {
 				const recording = new Audio(URL.createObjectURL(file));
 				this.props.isRecording(false);
 				this.props.saveMemo(recording, Date.now());
-			});
+			})
+			.catch((err) => alert(err));
 	};
 
 	render() {
