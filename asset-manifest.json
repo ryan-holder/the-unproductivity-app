@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/the-unproductivity-app/static/css/main.e2268719.chunk.css",
-    "main.js": "/the-unproductivity-app/static/js/main.9b89a82f.chunk.js",
-    "main.js.map": "/the-unproductivity-app/static/js/main.9b89a82f.chunk.js.map",
+    "main.js": "/the-unproductivity-app/static/js/main.4a4e55b7.chunk.js",
+    "main.js.map": "/the-unproductivity-app/static/js/main.4a4e55b7.chunk.js.map",
     "runtime-main.js": "/the-unproductivity-app/static/js/runtime-main.3b179778.js",
     "runtime-main.js.map": "/the-unproductivity-app/static/js/runtime-main.3b179778.js.map",
     "static/js/2.fbea1037.chunk.js": "/the-unproductivity-app/static/js/2.fbea1037.chunk.js",
     "static/js/2.fbea1037.chunk.js.map": "/the-unproductivity-app/static/js/2.fbea1037.chunk.js.map",
     "index.html": "/the-unproductivity-app/index.html",
-    "precache-manifest.610990149c5bc80132a94ce648494b93.js": "/the-unproductivity-app/precache-manifest.610990149c5bc80132a94ce648494b93.js",
+    "precache-manifest.3098e7584960bea4dd3cbd966ad4ef6a.js": "/the-unproductivity-app/precache-manifest.3098e7584960bea4dd3cbd966ad4ef6a.js",
     "service-worker.js": "/the-unproductivity-app/service-worker.js",
     "static/css/main.e2268719.chunk.css.map": "/the-unproductivity-app/static/css/main.e2268719.chunk.css.map",
     "static/js/2.fbea1037.chunk.js.LICENSE.txt": "/the-unproductivity-app/static/js/2.fbea1037.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3b179778.js",
     "static/js/2.fbea1037.chunk.js",
     "static/css/main.e2268719.chunk.css",
-    "static/js/main.9b89a82f.chunk.js"
+    "static/js/main.4a4e55b7.chunk.js"
   ]
 }
