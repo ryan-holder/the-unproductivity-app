@@ -53,7 +53,7 @@ class Canvas extends React.Component {
 	}
 
 	handleTouch(e) {
-		e.persist(e);
+		e.persist();
 		this.isDrawing = true;
 		const rect = e.target.getBoundingClientRect();
 		[this.lastX, this.lastY] = [
@@ -65,11 +65,6 @@ class Canvas extends React.Component {
 
 	touchDraw(e) {
 		e.persist();
-		console.log(
-			e.nativeEvent.touches[0].pageX - rect.left,
-			e.nativeEvent.touches[0].pageY - rect.top
-		);
-		console.log("touch draww");
 		const rect = e.target.getBoundingClientRect();
 		if (!this.isDrawing) return; // cancels if mouse is not down
 		this.ctx.lineWidth = this.props.canvas.size;
@@ -84,11 +79,11 @@ class Canvas extends React.Component {
 		);
 		this.ctx.stroke();
 		[this.lastX, this.lastY] = [
-			"X",
 			e.nativeEvent.touches[0].pageX - rect.left,
 			e.nativeEvent.touches[0].pageY - rect.top,
 		];
 		this.hue = this.hue + 15;
+		console.log(this.lastX, this.lastY);
 	}
 
 	draw(e) {
@@ -148,10 +143,10 @@ class Canvas extends React.Component {
 				<canvas
 					className="canvas"
 					ref={this.canvasRef}
-					onMouseDown={(e) => this.handleMouseDown(e)}
+					/*onMouseDown={(e) => this.handleMouseDown(e)}
 					onMouseMove={(e) => this.draw(e)}
 					onMouseUp={() => (this.isDrawing = false)}
-					onMouseLeave={() => (this.isDrawing = false)}
+					onMouseLeave={() => (this.isDrawing = false)}*/
 					onTouchStart={(e) => this.handleTouch(e)}
 					onTouchMove={(e) => this.touchDraw(e)}
 					onTouchEnd={() => (this.isDrawing = false)}
