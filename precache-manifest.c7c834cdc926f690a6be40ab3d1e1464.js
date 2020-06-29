@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b8bfc2f4e8733a013b728553507c38df",
+    "revision": "35dc29e525c9689a210567630e8f749f",
     "url": "/the-unproductivity-app/index.html"
   },
   {
-    "revision": "135075b48ce0d96e2387",
-    "url": "/the-unproductivity-app/static/css/main.e2268719.chunk.css"
+    "revision": "b19dcc0369a3adff5c2c",
+    "url": "/the-unproductivity-app/static/css/main.c59b0e7d.chunk.css"
   },
   {
     "revision": "8f4d8002ac530659f906",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/the-unproductivity-app/static/js/2.fbea1037.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "135075b48ce0d96e2387",
-    "url": "/the-unproductivity-app/static/js/main.cc906f36.chunk.js"
+    "revision": "b19dcc0369a3adff5c2c",
+    "url": "/the-unproductivity-app/static/js/main.36c8c922.chunk.js"
   },
   {
     "revision": "bcc118c7e27090bd1163",
