@@ -235,7 +235,6 @@ input[type="checkbox"] {
 	border-radius: 5px;
 	border: 1px solid lightgrey;
 	touch-action: none;
-	cursor: pointer;
 }
 
 .canvas-inputs {
