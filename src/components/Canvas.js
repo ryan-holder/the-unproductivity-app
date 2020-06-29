@@ -64,7 +64,7 @@ class Canvas extends React.Component {
 	}
 
 	touchDraw(e) {
-		console.log("touch drawing");
+		console.log("touch drawing", this.isDrawing);
 		e.persist();
 		const rect = e.target.getBoundingClientRect();
 		if (!this.isDrawing) return; // cancels if mouse is not down
