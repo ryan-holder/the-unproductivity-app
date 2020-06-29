@@ -19,10 +19,10 @@ class Canvas extends React.Component {
 	constructor() {
 		super();
 		this.handleMouseDown = this.handleMouseDown.bind(this);
-		/*this.handleTouch = this.handleTouch.bind(this);*/
+		this.handleTouch = this.handleTouch.bind(this);
 		this.draw = this.draw.bind(this);
 		this.handleMouseDown = this.handleMouseDown.bind(this);
-		/*this.touchDraw = this.touchDraw.bind(this);*/
+		this.touchDraw = this.touchDraw.bind(this);
 		this.canvasRef = React.createRef();
 		this.sizeRef = React.createRef();
 		this.colourRef = React.createRef();
@@ -52,7 +52,7 @@ class Canvas extends React.Component {
 		[this.lastX, this.lastY] = [e.nativeEvent.offsetX, e.nativeEvent.offsetY];
 	}
 
-	/*	handleTouch(e) {
+	handleTouch(e) {
 		e.persist(e);
 		this.isDrawing = true;
 		const rect = e.target.getBoundingClientRect();
@@ -84,7 +84,7 @@ class Canvas extends React.Component {
 			e.nativeEvent.touches[0].pageY - rect.top,
 		];
 		this.hue = this.hue + 15;
-	}*/
+	}
 
 	draw(e) {
 		e.persist();
@@ -146,9 +146,9 @@ class Canvas extends React.Component {
 					onMouseMove={(e) => this.draw(e)}
 					onMouseUp={() => (this.isDrawing = false)}
 					onMouseLeave={() => (this.isDrawing = false)}
-					/*					onTouchStart={(e) => this.handleTouch(e)}
+					onTouchStart={(e) => this.handleTouch(e)}
 					onTouchMove={(e) => this.touchDraw(e)}
-					onTouchEnd={() => (this.isDrawing = false)}*/
+					onTouchEnd={() => (this.isDrawing = false)}
 				></canvas>
 			</div>
 		);
