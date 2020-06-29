@@ -26,16 +26,20 @@ class Memos extends React.Component {
 	}
 
 	getMicPermission = () => {
-		navigator.mediaDevices
-			.getUserMedia({ audio: true })
-			.then(() => {
-				console.log("Permission granted");
-				this.props.isBlocked(false);
-			})
-			.catch((err) => {
-				console.log("Permission denied");
-				this.props.isBlocked(true);
-			});
+		if (navigator.mediaDevices) {
+			navigator.mediaDevices
+				.getUserMedia({ audio: true })
+				.then(() => {
+					console.log("Permission granted");
+					this.props.isBlocked(false);
+				})
+				.catch((err) => {
+					console.log("Permission denied", err);
+					this.props.isBlocked(true);
+				});
+		} else {
+			alert("Device not supported");
+		}
 	};
 
 	startRecording = () => {
