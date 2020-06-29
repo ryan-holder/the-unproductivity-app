@@ -51,9 +51,7 @@ class Memos extends React.Component {
 			);
 		} else {
 			this.props.isRecording(true);
-			mp3Recorder
-				.start()
-				.catch((e) => console.error("Something went wrong", e));
+			mp3Recorder.start().catch((err) => alert("Something went wrong", err));
 		}
 	};
 
@@ -78,12 +76,7 @@ class Memos extends React.Component {
 		return (
 			<div className="memos-landing">
 				<div className="button-container">
-					<button
-						className={this.props.memos.recording ? "play-active" : ""}
-						onClick={this.startRecording}
-					>
-						&#x25b6;
-					</button>
+					<button onClick={this.startRecording}>&#x25b6;</button>
 					<button
 						className={this.props.memos.recording ? "stop-active" : ""}
 						onClick={this.stopRecording}
