@@ -54,6 +54,7 @@ class Canvas extends React.Component {
 
 	handleTouch(e) {
 		e.persist(e);
+		e.preventDefault();
 		this.isDrawing = true;
 		const rect = e.target.getBoundingClientRect();
 		[this.lastX, this.lastY] = [
@@ -65,6 +66,7 @@ class Canvas extends React.Component {
 
 	touchDraw(e) {
 		e.persist();
+		e.preventDefault();
 		const rect = e.target.getBoundingClientRect();
 		if (!this.isDrawing) return; // cancels if mouse is not down
 		this.ctx.lineWidth = this.props.canvas.size;
