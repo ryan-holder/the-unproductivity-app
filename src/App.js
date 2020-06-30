@@ -1,6 +1,7 @@
 // Known bugs: no 4k resolution media queries, landing and canvas rendering to many times on input change
 
-// Improvements: adding canvas to state; undo and redo functionality; make touchdraw and draw one function; add filters to memos
+// Improvements: add canvas to state; undo and redo functionality; make touchdraw and draw one function; add filters to memos
+// Improvements: add better copywriting to todos to make it more fun; possibly integrating animating messages when toggling todos
 
 import React from "react";
 import Nav from "./components/Nav";

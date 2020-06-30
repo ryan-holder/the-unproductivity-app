@@ -1,5 +1,3 @@
-// add better copywriting to todos to make it more fun; possibly integrating animating messages when toggling todos
-
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
