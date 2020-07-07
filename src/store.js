@@ -4,14 +4,15 @@ import rootReducer from "./reducers/rootReducer";
 const initialState = {
 	todos: [
 		{ index: 0, content: "Add a todo", checked: false },
-		{ index: 1, content: "Wow that was fun", checked: false },
+		{ index: 1, content: "Check a todo", checked: false },
+		{ index: 2, content: "Delete a todo", checked: false },
 		{
-			index: 2,
+			index: 3,
 			content: "Go to canvas 'cos it's cooler",
 			checked: false,
 		},
 	],
-	canvas: { size: 60, hex: "#BADA55", hue: false },
+	canvas: { size: 60, hex: "#000000", hue: false },
 	memos: { blocked: false, recording: false, recordings: [] },
 };
 
