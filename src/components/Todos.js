@@ -64,7 +64,7 @@ class Todos extends React.Component {
 					<input
 						ref={this.inputRef}
 						type="text"
-						placeholder="Add your todos here"
+						placeholder="Add your to-dos here"
 					/>
 					<input type="submit" className="add-todo-button" />
 				</form>

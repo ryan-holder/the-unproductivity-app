@@ -3,9 +3,9 @@ import rootReducer from "./reducers/rootReducer";
 
 const initialState = {
 	todos: [
-		{ index: 0, content: "Add a todo", checked: false },
-		{ index: 1, content: "Check a todo", checked: false },
-		{ index: 2, content: "Delete a todo", checked: false },
+		{ index: 0, content: "Add a to-do", checked: false },
+		{ index: 1, content: "Check a to-do", checked: false },
+		{ index: 2, content: "Delete a to-do", checked: false },
 		{
 			index: 3,
 			content: "Go to canvas 'cos it's cooler",
